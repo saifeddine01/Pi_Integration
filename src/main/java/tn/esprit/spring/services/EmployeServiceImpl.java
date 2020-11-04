@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Employe;
@@ -30,6 +33,8 @@ public class EmployeServiceImpl implements IEmployeService {
 	ContratRepository contratRepoistory;
 	@Autowired
 	TimesheetRepository timesheetRepository;
+	
+	private static final Logger l = LogManager.getLogger(EmployeServiceImpl.class);
 
 	@Override
 	public Employe authenticate(String login, String password) {
@@ -38,7 +43,9 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	@Override
 	public int addOrUpdateEmploye(Employe employe) {
+		l.info("Add or Update Employe : " + employe); 
 		employeRepository.save(employe);
+		l.info("Out of  Add or Update. "); 
 		return employe.getId();
 	}
 
