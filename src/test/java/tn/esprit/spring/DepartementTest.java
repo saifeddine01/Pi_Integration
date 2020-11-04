@@ -20,9 +20,13 @@ public class DepartementTest {
 	@Autowired 
 	IDepartementService dep;
 	public static final Logger logger = Logger.getLogger(DepartementTest.class);
+	int depid;
 	@Test
-	public void TestMethpde()  {
-		logger.info("ceci est un test ");
-		assertTrue( true );
+	public void addDepartment()  {
+		logger.info("Debut test add department : ");
+		Departement dp = new Departement("TECHNIQUE");
+		depid =dep.ajouterdepartement(dp);
+		assertEquals(depid, dp.getId());
+		logger.info("Finish testing");
 	}
 }

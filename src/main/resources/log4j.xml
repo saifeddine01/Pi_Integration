@@ -21,7 +21,7 @@
 		<param name="append" value="true" />
 		<param name="maxFileSize" value="1KB" />
 		<param name="maxBackupIndex" value="10" />
-		<param name="file" value="C:/logs/formation/log4j-demo.log" />
+		<param name="file" value="C:/logs/pi_integration/log4j-demo.log" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-5p] %C - %m%n" />
 		</layout>
