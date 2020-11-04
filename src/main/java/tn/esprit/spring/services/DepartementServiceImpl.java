@@ -33,5 +33,19 @@ public class DepartementServiceImpl implements IDepartementService {
 		deptRepoistory.save(departement);
 		return departement.getId();
 	}
+	
+	@Override
+	public void deleteDepartemetById(int departId) {
+		logger.info("Delete department :  *******************************"); 
+		Departement deptodelete =deptRepoistory.findById(departId).get();
+		logger.info("Delete department ID :  "+deptodelete.getId()); 
+		deptRepoistory.delete(deptodelete);
+		logger.info("Delete Succesful");
+	}
+	@Override
+	public void EditDepartement(String departement, int depId) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
