@@ -22,14 +22,12 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest
 public class EmployeTest {
 	
-<<<<<<< HEAD
+
 	@Autowired 
 	IEmployeService es; 
-	
-	public static final Logger logger = Logger.getLogger(DepartementTest.class);
-=======
+
 	public static final Logger logger = Logger.getLogger(EmployeTest.class);
->>>>>>> 6316b5c899389d4909574c8a0e83c59db8691861
+
 	
 	@Test
 	public void TestAddorUpdate() throws ParseException {
