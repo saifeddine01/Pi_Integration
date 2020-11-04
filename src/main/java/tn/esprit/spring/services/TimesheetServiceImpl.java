@@ -65,15 +65,29 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	}
 
 	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
+		logger.info("Debut d'éxcution de l'ajoutTimesheetPK");
+		logger.debug("Ajout de TimesheetPK");
 		TimesheetPK timesheetPK = new TimesheetPK();
+		logger.info("fin d'éxcution");
+		
+		logger.debug("Ajout de dateDebut");
 		timesheetPK.setDateDebut(dateDebut);
+		logger.debug("Ajout de dateFin");
 		timesheetPK.setDateFin(dateFin);
+		logger.debug("Ajout de EmployeId");
 		timesheetPK.setIdEmploye(employeId);
+		logger.debug("Ajout de missionId");
 		timesheetPK.setIdMission(missionId);
 		
+		logger.info("Debut d'éxcution de l'ajoutTimesheet");
+		logger.debug("Ajout de Timesheet");
 		Timesheet timesheet = new Timesheet();
+		logger.info("fin d'éxcution");
+		logger.debug("récupérer de TimesheetPK");
 		timesheet.setTimesheetPK(timesheetPK);
+		logger.debug("Vérification");
 		timesheet.setValide(false); //par defaut non valide
+		logger.debug("Enregistrement");
 		timesheetRepository.save(timesheet);
 		
 	}
