@@ -11,6 +11,8 @@ public interface IDepartementService {
 	
 	public List<Departement> getAllDepartements();
 	public int ajouterdepartement(Departement departement);
+	public void EditDepartement(String departement,int depId);
+	public void deleteDepartemetById(int departId);
 
 	
 	
