@@ -45,12 +45,23 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	}
     
 	public void affecterMissionADepartement(int missionId, int depId) {
-		
+		logger.info("Debut d'éxcution de l'affectation missionId");
+		logger.debug("Affecter missionId");
 		Mission mission = missionRepository.findById(missionId).get();
+		logger.info("fini d'éxcution");
+		logger.info("Debut d'éxcution de l'affectation DepartementId");
+		logger.debug("Affecter departementId");
 		Departement dep = deptRepoistory.findById(depId).get();
+		logger.info("fini d'éxcution");
+		logger.info("Debut d'éxcution de la récupération Departement");
+		logger.debug("Affecter departement");
 		mission.setDepartement(dep);
+		logger.info("fini d'éxcution");
+		logger.info("Debut d'éxcution de la affectation de mission");
+		logger.debug("Affecter de la mission");
 		missionRepository.save(mission);
-		
+		logger.info("fini d'éxcution");
+
 	}
 
 	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
