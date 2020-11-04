@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class TimesheetApplicationTests {
-	private static final Logger logger = Logger.getLogger(DepartementTest.class);
+	private static final Logger logger = Logger.getLogger(TimesheetApplicationTests.class);
 	@Test
 	public void contextLoads() {
 		logger.info("Hello ");

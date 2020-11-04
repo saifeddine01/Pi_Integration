@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest
 public class EmployeTest {
 	
-	public static final Logger logger = Logger.getLogger(DepartementTest.class);
+	public static final Logger logger = Logger.getLogger(EmployeTest.class);
 	
 	@Test
 	public void TestMethode()  {
