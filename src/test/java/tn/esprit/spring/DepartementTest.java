@@ -6,6 +6,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,9 +22,21 @@ public class DepartementTest {
 	@Autowired 
 	IDepartementService dep;
 	public static final Logger logger = Logger.getLogger(DepartementTest.class);
+	int depid;
 	@Test
-	public void TestMethpde()  {
-		logger.info("ceci est un test ");
-		assertTrue( true );
+	public void addDepartment()  {
+		logger.info("Debut test add department : ");
+		Departement dp = new Departement("TECHNIQUE");
+		depid =dep.ajouterdepartement(dp);
+		logger.info(depid);
+		assertEquals(depid, dp.getId());
+		logger.info("Finish testing");
+	}
+	@Test
+	public void GetAlDepartments()  {
+		logger.info("Get all depeartment callign ");
+		List<Departement> listDep = dep.getAllDepartements(); 
+		// if there are 5 users in DB : 
+		assertEquals(5, listDep.size());
 	}
 }

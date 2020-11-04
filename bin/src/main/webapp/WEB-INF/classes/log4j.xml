@@ -19,9 +19,9 @@
 	<!-- append=false: pour écraser les anciens logs près chaque redémarrage -->
 	<appender name="file" class="org.apache.log4j.RollingFileAppender">
 		<param name="append" value="true" />
-		<param name="maxFileSize" value="1KB" />
+		<param name="maxFileSize" value="10KB" />
 		<param name="maxBackupIndex" value="10" />
-		<param name="file" value="C:/logs/formation/log4j-demo.log" />
+		<param name="file" value="C:/logs/pi_integration/log4j-integration.log" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} [%-5p] %C - %m%n" />
 		</layout>
