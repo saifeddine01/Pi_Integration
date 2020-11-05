@@ -71,7 +71,7 @@ public class EmployeTest {
 	@Test
 	public void TestDeleteEmploye()  {
 		logger.info("-------Delete Employe Starting-------");
-		int EmployeID = 4;
+		int EmployeID = 6;
 		es.deleteEmployeById(EmployeID);
 		logger.info("Employe with ID " + EmployeID + " is deleted");
 		logger.info("-------Delete Employe Finished-------");
