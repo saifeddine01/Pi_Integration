@@ -67,4 +67,13 @@ public class EmployeTest {
 		
 		logger.info("-------Affaction Contract to Employe Finished-------");
 	}
+	
+	@Test
+	public void TestDeleteEmploye()  {
+		logger.info("-------Delete Employe Starting-------");
+		int EmployeID = 4;
+		es.deleteEmployeById(EmployeID);
+		logger.info("Employe with ID " + EmployeID + " is deleted");
+		logger.info("-------Delete Employe Finished-------");
+	}
 }
