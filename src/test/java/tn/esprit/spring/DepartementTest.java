@@ -28,6 +28,8 @@ public class DepartementTest {
 	public static final Logger logger = Logger.getLogger(DepartementTest.class);
 	int depid;
 	int depIdDelete;
+	String depName;
+	int idd;
 	@Test
 	public void addDepartment()  {
 		logger.info("Debut test add department : ");
@@ -58,5 +60,23 @@ public class DepartementTest {
 		else {
 			logger.debug("Value is not present ");
 		}
+	}
+	@Test
+	public void EditDepartmentName()  {
+		logger.debug("Start Edit function test  ****************");
+		Optional <Departement> depedit=depRepo.findById(idd);
+	
+		if(depedit.isPresent()) {
+			String	name =depedit.get().getName();
+			logger.info("Found Item to edit  :  ");
+			dep.EditDepartement(depName, idd);
+			logger.info("Successfully Changed Value   :  ");
+			logger.debug("Value changed from"+name +"New Value :"+depedit.get().getName());
+	}
+		else {
+			logger.info("Item to edit NOT FOUND  :  ");
+			logger.info("Please insert a valid id department :  ");
+		}
+		logger.debug("End Edit function test  ****************");
 	}
 }

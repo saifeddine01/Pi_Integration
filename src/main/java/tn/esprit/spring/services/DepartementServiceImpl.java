@@ -18,12 +18,13 @@ public class DepartementServiceImpl implements IDepartementService {
 	DepartementRepository deptRepoistory;
 	
 	public static final Logger logger = Logger.getLogger(DepartementServiceImpl.class);
-
+	int i=0;
 	public List<Departement> getAllDepartements() {
 		logger.info("In  retrieveAllDepartments : "); 
 		List<Departement> listall =  (List<Departement>) deptRepoistory.findAll();
 		for (Departement depart : listall) {
-			logger.debug("depart +++ : " + depart);
+			logger.debug("items("+i+")" +"+++ : " + depart);
+			i++;
 		}
 		logger.info("Out of retrieveAllDepartment"); 
 		return listall;
@@ -36,15 +37,22 @@ public class DepartementServiceImpl implements IDepartementService {
 	
 	@Override
 	public void deleteDepartemetById(int departId) {
+		logger.info("In  deleteDepartemetById : " ); 
 		logger.info("Delete department :  *******************************"); 
 		Departement deptodelete =deptRepoistory.findById(departId).get();
 		logger.info("Delete department ID :  "+deptodelete.getId()); 
 		deptRepoistory.delete(deptodelete);
 		logger.info("Delete Succesful");
+		logger.info("Out  deleteDepartemetById : " ); 
 	}
 	@Override
 	public void EditDepartement(String departement, int depId) {
-		// TODO Auto-generated method stub
+		logger.info("In  EditDepartement : " ); 
+		Departement deptoEdit =deptRepoistory.findById(depId).get();
+		deptoEdit.setName(departement);
+		logger.debug("Change department successfully  "  +deptoEdit); 
+		logger.info("Out  EditDepartement : " ); 
+		
 		
 	}
 
